@@ -22,6 +22,7 @@ const validate = (values) => {
     if (!values.password) {
         errors.password = "Required";
     }
+    // Checking username and password match
     else if (values.state.registeredPasswords[values.state.registeredUsernames.indexOf(values.username)] !== values.password) {
         errors.password = "Incorrect password";
     }
@@ -47,7 +48,7 @@ export default function LoginPage() {
         validate,
 
         onSubmit: values => {
-        
+
             dispatch(login(values.username))
             nav("/");
 

@@ -13,6 +13,7 @@ export default function HomePage() {
     // useNavigate to navigate to login/register page
     const nav = useNavigate();
 
+    // Showing login/register page
     if (state.loginStatus === false) {
         return (
             <div>
@@ -28,6 +29,7 @@ export default function HomePage() {
             </div>
         );
     }
+    // Showing logout page
     else {
         return (
             <div>
