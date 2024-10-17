@@ -4,30 +4,44 @@ const shopSlice = createSlice({
     name: "Shop",
     initialState: {
         cartItems: [],
-        registeredUsers: [],
-        currentUser: [],
+        registeredUsernames: [],
+        registeredPasswords: [],
+        currentUser: "",
         totalPrice: 0,
         loginStatus: false,
     },
     reducers: {
-        // Function to set login state to true
-        login: (state) => {
+
+        // Function to set login state to true and update current user
+        login: (state, action) => {
             return {
                 ...state,
-                loginStatus: true
+                loginStatus: true,
+                currentUser: action.payload
             };
         },
-        // Function to set login state to false
+
+        // Function to set login state to false and remove current user
         logout: (state) => {
             return {
                 ...state,
-                loginStatus: false
+                loginStatus: false,
+                currentUser: ""
             };
         },
-        // Function to check for valid user login
+
+        // Function to add user to registered users
+        addUser: (state, action) => {
+            return {
+                ...state,
+                registeredUsernames: [...state.registeredUsernames, action.payload.username],
+                registeredPasswords: [...state.registeredPasswords, action.payload.password]
+            };
+        },
+
     }
 })
 
-export const { login, logout } = shopSlice.actions
+export const { login, logout, addUser } = shopSlice.actions
 
 export default shopSlice.reducer

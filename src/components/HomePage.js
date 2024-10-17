@@ -1,11 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { logout } from "../store/storeState";
 
 export default function HomePage() {
     // useSelector function to get login state from store
     // for conditonal rendering
     const state = useSelector((state) => state.shop);
+
+    const dispatch = useDispatch();
 
     // useNavigate to navigate to login/register page
     const nav = useNavigate();
@@ -28,7 +31,10 @@ export default function HomePage() {
     else {
         return (
             <div>
-                <button> Logout </button>
+                <button 
+                  onClick={() => dispatch(logout())} > 
+                  Logout 
+                </button>
             </div>
         );
     }

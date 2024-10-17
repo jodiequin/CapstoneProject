@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function NavBar() {
+
+    const state = useSelector((state) => state.shop);
+
     return (
         <div>
             <div>
@@ -11,7 +15,7 @@ export default function NavBar() {
             </div>
 
             <div>
-                Username conditional rendering
+                {state.currentUser}
             </div>
         </div>
     );
