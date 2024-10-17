@@ -39,9 +39,17 @@ const shopSlice = createSlice({
             };
         },
 
+        // Function to add product to cart
+        addProductCart: (state, action) => {
+            return {
+                ...state,
+                cartItems: [...state.cartItems, action.payload]
+            };
+        },
+
     }
 })
 
-export const { login, logout, addUser } = shopSlice.actions
+export const { login, logout, addUser, addProductCart } = shopSlice.actions
 
 export default shopSlice.reducer
