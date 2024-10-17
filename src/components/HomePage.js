@@ -4,10 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { logout } from "../store/storeState";
 
 export default function HomePage() {
-    // useSelector function to get login state from store
-    // for conditonal rendering
+    
+    // To call from global storage
     const state = useSelector((state) => state.shop);
-
     const dispatch = useDispatch();
 
     // useNavigate to navigate to login/register page

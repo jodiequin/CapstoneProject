@@ -43,13 +43,23 @@ const shopSlice = createSlice({
         addProductCart: (state, action) => {
             return {
                 ...state,
-                cartItems: [...state.cartItems, action.payload]
+                cartItems: [...state.cartItems, action.payload],
+                totalPrice: state.totalPrice + action.payload.price
+            };
+        },
+
+        // Function to remove product from cart
+        removeProductCart: (state, action) => {
+            return {
+                ...state,
+                cartItems: state.cartItems.filter(product => product.name !== action.payload.name),
+                totalPrice: state.totalPrice - action.payload.price
             };
         },
 
     }
 })
 
-export const { login, logout, addUser, addProductCart } = shopSlice.actions
+export const { login, logout, addUser, addProductCart, removeProductCart } = shopSlice.actions
 
 export default shopSlice.reducer

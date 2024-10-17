@@ -5,6 +5,7 @@ import { addProductCart } from "../store/storeState";
 
 const ProductCard = (product) => {
 
+    // To call from global storage
     const dispatch = useDispatch();
     const state = useSelector((state) => state.shop);
 
@@ -27,14 +28,19 @@ const ProductCard = (product) => {
     }
     else {
         return (
-            <Card>
-                <Card.Img variant="top" src={product.image} />
-                <Card.Body>
-                    <Card.Title> {product.name} </Card.Title>
-                    <Card.Text> {product.description} </Card.Text>
-                    <Card.Text> R{product.price} </Card.Text>
-                </Card.Body>
-            </Card>
+            <div>
+                <div>
+                    <h1> Log in to add items to cart </h1>
+                </div>
+                <Card>
+                    <Card.Img variant="top" src={product.image} />
+                    <Card.Body>
+                        <Card.Title> {product.name} </Card.Title>
+                        <Card.Text> {product.description} </Card.Text>
+                        <Card.Text> R{product.price} </Card.Text>
+                    </Card.Body>
+                </Card>
+            </div>
         );
     }
 }
