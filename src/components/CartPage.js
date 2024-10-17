@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import CartCard from "./CartCard";
+import CartCard from "./CartCard.js";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
+import HelpPopUp from "./HelpPopUp.js";
 
 export default function CartPage() {
 
@@ -38,6 +39,7 @@ export default function CartPage() {
                             </Dropdown.Item>
                         </DropdownButton>
                     </form>
+                    <HelpPopUp />
 
                     <h4> - Cart Summary - </h4>
                     <div>
