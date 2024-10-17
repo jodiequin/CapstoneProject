@@ -57,7 +57,9 @@ export default function LoginPage() {
 
     return (
 
-        <form onSubmit={formik.handleSubmit} className="home_background">
+        <form 
+          onSubmit={formik.handleSubmit} 
+          className="login_page">
 
             <label htmlFor="username"> Username </label>
             <input
@@ -85,7 +87,11 @@ export default function LoginPage() {
               <div> {formik.errors.password} </div> 
             ): null}
 
-            <button type="submit"> LOGIN </button>
+            <button 
+              className="home_page_buttons"
+              type="submit"> 
+              LOGIN 
+            </button>
 
         </form>
     );

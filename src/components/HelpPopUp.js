@@ -12,7 +12,11 @@ export default function HelpPopUp() {
     // Displaying info popup
     return (
         <div>
-            <button onClick={handleOpen}> Help </button>
+            <button 
+              className="help_button"
+              onClick={handleOpen}> 
+              Help 
+            </button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>

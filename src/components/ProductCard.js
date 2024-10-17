@@ -21,26 +21,27 @@ const ProductCard = (product) => {
                     <Card.Title> {product.name} </Card.Title>
                     <Card.Text> {product.description} </Card.Text>
                     <Card.Text> R{product.price} </Card.Text>
-                    <button onClick={handleClick}> Add To Cart </button>
+                    <Card.Footer className="card_footer">
+                        <button 
+                        className="cart_button"
+                        onClick={handleClick}> 
+                        Add To Cart 
+                        </button>
+                    </Card.Footer>
                 </Card.Body>
             </Card>
         );
     }
     else {
         return (
-            <div>
-                <div>
-                    <h1> Log in to add items to cart </h1>
-                </div>
-                <Card>
-                    <Card.Img variant="top" src={product.image} />
-                    <Card.Body>
-                        <Card.Title> {product.name} </Card.Title>
-                        <Card.Text> {product.description} </Card.Text>
-                        <Card.Text> R{product.price} </Card.Text>
-                    </Card.Body>
-                </Card>
-            </div>
+            <Card>
+                <Card.Img variant="top" src={product.image} />
+                <Card.Body>
+                    <Card.Title> {product.name} </Card.Title>
+                    <Card.Text> {product.description} </Card.Text>
+                    <Card.Text> R{product.price} </Card.Text>
+                </Card.Body>
+            </Card>
         );
     }
 }

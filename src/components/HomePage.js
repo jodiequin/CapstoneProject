@@ -15,24 +15,39 @@ export default function HomePage() {
     // Showing login/register page
     if (state.loginStatus === false) {
         return (
-            <div>
-                <button
-                  onClick={() => nav("/login")} > 
-                  Login 
-                </button>
+            <div className="home_page">
 
-                <button
-                  onClick={() => nav("/register")} > 
-                  Register
-                </button>
+                <h1 className="welcome_margin">
+                    Welcome to your favourite clothing boutique!
+                </h1>
+
+                <div>
+                    <button
+                      className="home_page_buttons"
+                      onClick={() => nav("/login")} > 
+                      Login 
+                    </button>
+
+                    <button
+                      className="home_page_buttons"
+                      onClick={() => nav("/register")} > 
+                      Register
+                    </button>
+                </div>
             </div>
         );
     }
     // Showing logout page
     else {
         return (
-            <div>
+            <div className="home_page">
+
+                <h1 className="welcome_margin">
+                    Welcome, <b> {state.currentUser} </b>, to your favourite clothing boutique!
+                </h1>
+
                 <button 
+                  className="home_page_buttons"
                   onClick={() => dispatch(logout())} > 
                   Logout 
                 </button>

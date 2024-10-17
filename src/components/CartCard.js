@@ -1,14 +1,13 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { removeProductCart } from "../store/storeState";
 
 const CartCard = (product) => {
 
     // To call from global storage
     const dispatch = useDispatch();
-    const state = useSelector((state) => state.shop);
-
+    
     // Function to handle add to cart button click
     const handleClick = () => { dispatch(removeProductCart({name: product.name, price: product.price})) };
 
@@ -19,7 +18,13 @@ const CartCard = (product) => {
                 <Card.Title> {product.name} </Card.Title>
                 <Card.Text> {product.description} </Card.Text>
                 <Card.Text> R{product.price} </Card.Text>
-                <button onClick={handleClick}> Remove </button>
+                <Card.Footer className="card_footer">
+                    <button 
+                      className="cart_button"
+                      onClick={handleClick}> 
+                      Remove 
+                    </button>
+                </Card.Footer>
             </Card.Body>
         </Card>
     );

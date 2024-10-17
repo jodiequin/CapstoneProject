@@ -103,7 +103,9 @@ export default function RegisterPage() {
 
     return (
 
-        <form onSubmit={formik.handleSubmit} className="home_background">
+        <form 
+          onSubmit={formik.handleSubmit} 
+          className="login_page">
 
             <label htmlFor="firstName"> First Name </label>
             <input
@@ -196,7 +198,11 @@ export default function RegisterPage() {
               <div> {formik.errors.checkPassword} </div> 
             ): null}
 
-            <button type="submit"> REGISTER </button>
+            <button 
+              className="home_page_buttons"
+              type="submit"> 
+              REGISTER 
+            </button>
 
         </form>
     );
