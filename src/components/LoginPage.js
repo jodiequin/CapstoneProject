@@ -14,7 +14,7 @@ const validate = (values) => {
         errors.username = "Required";
     }
     // Checking username is registered
-    else if (values.state.registeredUsernames.indexOf(values.username) == -1) {
+    else if (values.state.registeredUsernames.indexOf(values.username) === -1) {
         errors.username = "Username not found";
     }
 
