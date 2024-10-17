@@ -19,7 +19,7 @@ const CartCard = (product) => {
                 <Card.Title> {product.name} </Card.Title>
                 <Card.Text> {product.description} </Card.Text>
                 <Card.Text> R{product.price} </Card.Text>
-                <button onClick={handleClick}> Delete </button>
+                <button onClick={handleClick}> Remove </button>
             </Card.Body>
         </Card>
     );
